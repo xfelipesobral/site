@@ -1,0 +1,20 @@
+.indexTitulo{
+	
+	background-image: url('../img/bgtop.png');
+	display: block !important;
+
+}
+
+.indexTituloT{
+	text-shadow: 2px 2px 4px #000000;
+	padding-top: 20%;
+	padding-bottom: 20%;
+}
+
+.espacador{
+	margin:0;
+	padding:0;
+	height:10px;
+	background: #2D2D2DFF;
+}
+
