@@ -11,6 +11,10 @@
 	padding-bottom: 20%;
 }
 
+.sombra{
+ 	box-shadow: 2px 2px 4px #000;
+}
+
 .espacador{
 	margin:0;
 	padding:0;
@@ -18,3 +22,21 @@
 	background: #2D2D2DFF;
 }
 
+.gridCardSkills{
+    -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .gridCardSkills {
+  	-ms-flex: 100%;
+  	flex: 100%;
+  	max-width: 100%;
+  }
+}
+
+.gridCardSkills2{
+	align-items: center;
+	display: flex;
+}
