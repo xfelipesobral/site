@@ -1,7 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+@-webkit-keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; } 
+}
+@-moz-keyframes fadeIn {
+0% { opacity: 0;}
+100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+
 .indexTitulo{
 	
 	background-image: url('../img/bgtop.png');
-	display: block !important;
+	display: block;
+	width: 100%;
+	height: 50%
 
 }
 
@@ -9,6 +30,14 @@
 	text-shadow: 2px 2px 4px #000000;
 	padding-top: 20%;
 	padding-bottom: 20%;
+}
+
+.fonteP{
+	font-family: 'Pacifico', cursive;
+	-webkit-animation: fadeIn 3s ease-in-out;
+	-moz-animation: fadeIn 3s ease-in-out;
+	-o-animation: fadeIn 3s ease-in-out;
+	animation: fadeIn 3s ease-in-out
 }
 
 .sombra{
@@ -39,4 +68,49 @@
 .gridCardSkills2{
 	align-items: center;
 	display: flex;
+}
+
+@media (max-width: 600px){
+	.gridCardSkills2{
+		-ms-flex-pack: center !important;
+        justify-content: center !important;
+	}
+}
+
+.creditosCard{
+	justify-content: center !important;
+}
+
+.logoUFPR{
+	padding: 0.25rem;
+ 	transition: all 0.2s ease-in-out;
+ 	max-width: 100%;
+ 	height: auto;
+}
+
+.creditos{
+	padding: 0.70rem 1.25rem;
+	background-color: #1f2226;
+	border-top: 1px solid rgba(0, 0, 0, 0.125);
+	text-align: center;
+}
+
+.creditos-dark{
+	padding: 0.70rem 1.25rem;
+	background-color: #343a40;
+	text-align: center;
+}
+
+.teste{
+	color:#fff;
+	margin-right: 2%;
+
+}
+
+.teste:hover{
+	color: #E88A0C;
+}
+
+.estrelas{
+	color: #E88A0C;
 }
