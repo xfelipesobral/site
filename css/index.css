@@ -32,6 +32,10 @@
 	padding-bottom: 20%;
 }
 
+.tituloCard{
+	font-family: 'Pacifico', cursive;
+}
+
 .fonteP{
 	font-family: 'Pacifico', cursive;
 	-webkit-animation: fadeIn 3s ease-in-out;
