@@ -21,6 +21,7 @@
 	
 	background-image: url('../img/bgtop.png');
 	display: block;
+	background-attachment: fixed;
 	width: 100%;
 	height: 50%
 
@@ -117,4 +118,22 @@
 
 .estrelas{
 	color: #E88A0C;
+}
+
+.works{
+	padding-top: 5%;
+	background-color: #262F36;
+	align-content: center;
+	padding-bottom: 5%;
+}
+
+.works-borda{
+	border-radius: 1.2% !important;
+	border-color: #6c6f73 !important;
+	display: block;
+}
+
+.works-code{
+	padding: 50px;
+	color: #6EA4CF ;
 }
