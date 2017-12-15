@@ -11,83 +11,86 @@
 		<link rel= "stylesheet" href= "css/bootstrap-theme.min.css" > 
 
         <!-- FONT AWESOME -->
-        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 
 		<!-- Meu CSS -->
 		<link rel="stylesheet" href="css/index.css">
 
 	</head>
 	<body>
-        <div data-spy="scroll" data-target="#navbar-topo" data-offset="0">
-		<!-- ## NAVBAR ## -->
- 		<div id="ini">
-			<nav id="navbar-topo" class="navbar navbar-dark bg-dark">
-  				<a class="navbar-brand" href="#">
-    			<img src="img/logo.png" width="30" height="30" class="d-inline-block align-top">
-    			Portfólio
-  				</a>
-
-  				<ul class="nav nav-pills">
-   					<li>
-      					<a class="btn btn-dark" href="#ini">Inicio</a>
-    				</li>
-    				<li class="nav-item">
-      					<a class="btn btn-dark" href="#sob">Sobre</a>
-    				</li>
- 				</ul>
-
-			</nav>
-		</div>
 
 		<!-- ## TITULO ## -->
 		<div class="indexTitulo" id="ini">
-			<blockquote class="blockquote text-center text-light">
-				<div class="indexTituloT">
+				<div class="indexTituloT text-center text-light">
 
   					<h1 class="display-2 fonteP">Felipe Sobral</h1>
                     <ul class="fonteP">
-                        <a href="https://www.facebook.com/krepper.fs" target="_BLANK"><i class="fa fa-facebook teste"></i></a>                     
-                        <a href="https://github.com/krepper" target="_BLANK"><i class="fa fa-github teste"></i></a>
-                        <a href="https://www.linkedin.com/in/felipesobralfs/" target="_BLANK"><i class="fa fa-linkedin teste"></i></a>
+                        <a href="https://www.facebook.com/krepper.fs" target="_BLANK"><i class="fab fa-facebook-square fa-2x teste"></i></a>                     
+                        <a href="https://github.com/krepper" target="_BLANK"><i class="fab fa-github fa-2x teste"></i></a>
+                        <a href="https://www.linkedin.com/in/felipesobralfs/" target="_BLANK"><i class="fab fa-linkedin fa-2x teste"></i></a>
+                    </ul>
+                    <ul class="fonteP">
+                        <a href="#works"><i class="fa fa-angle-down fa-3x teste"></i></a>
                     </ul>
   				</div>
-			</blockquote>
+
 		</div>
 
         <!-- EM CONSTRUÇÃO -->
-        <div id="works" class="works">
+        <div>
+        <div id="works" class="works div-sombra">
 
+            <div class="text-light text-center">
+                <h1><b>PROJETOS</b></h1>
+                <p><i>Em construção</i></p>
+            </div>
 
             <div class="container">
-                <div class="row">
-                    <div class="col-sm text-light">
-                        <h3>TRABALHOS DESENVOLVIDOS</h3>
-                        <h1>Principais projetos</h1>
-                        <p style="color: #8496A5">Portfólio ainda sendo montado :)</p>
-                    </div>
-                    <div class="col-sm works-borda">
-                        <pre class="works-code">
-<span style="color: #8496A5">01 projetos</span> "Felipe"
-<span style="color: #8496A5">02</span> 
-<span style="color: #8496A5">03</span>   {
-<span style="color: #8496A5">04</span>       "ConsultaLocal": {
-<span style="color: #8496A5">05</span>           "situacao": "Em desenvolvimento",
-<span style="color: #8496A5">06</span>           "linguagem": "Java",
-<span style="color: #8496A5">07</span>           "link": "<a href="consulta_local.html">consultaLocal.html</a>",    
-<span style="color: #8496A5">08</span>       }
-<span style="color: #8496A5">09</span>       "projetoThundera": {
-<span style="color: #8496A5">10</span>          "situacao": "Em desenvolvimento",
-<span style="color: #8496A5">11</span>          "linguagem": "Java",
-<span style="color: #8496A5">12</span>          "link": "...",
-<span style="color: #8496A5">13</span>       }
-<span style="color: #8496A5">14</span>       "zumbieInvaders": {
-<span style="color: #8496A5">15</span>          "situacao": "Em desenvolvimento",
-<span style="color: #8496A5">16</span>          "linguagem": "Python",
-<span style="color: #8496A5">17</span>          "link": "...",
-<span style="color: #8496A5">18</span>       }
-<span style="color: #8496A5">19</span>   } 
-                        </pre>
+                <div class="col-sm text-light">
+                    <div id="slideTop" class="carousel slide" data-ride="carousel" style="box-shadow:  black 0.1em 0.1em 0.2em;">
+                        <!-- Indicadores -->
+                        <ol class="carousel-indicators">
+                          <li data-target="#slideTop" data-slide-to="0" class="active"></li>
+                          <li data-target="#slideTop" data-slide-to="1"></li>
+                          <li data-target="#slideTop" data-slide-to="2"></li>
+                        </ol>
 
+                        <!-- Sldies -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="consulta_local.html"><img class="img-fluid w-100" src="img/slides/img3.jpg"></a>
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>Consulta Local</h3>
+                                    <p> TESTANDO SLIDE </p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <img class="img-fluid w-100" src="img/slides/img2.jpg" alt="Chicago">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>Zumbie Invaders</h3>
+                                    <p> TESTANDO SLIDE </p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <img class="img-fluid w-100" src="img/slides/img3.jpg" alt="New York">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>Jogo Ominicron</h3>
+                                    <p> TESTANDO SLIDE </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controles -->
+                        <a class="carousel-control-prev" href="#slideTop" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Ant</span>
+                        </a>
+                        <a class="carousel-control-next" href="#slideTop" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Prox</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -96,25 +99,26 @@
 
         </div>
 
+        <div class="sobreMim" style="box-shadow: inset  0px 10px 25px -5px #000">
 
 		<div id="sob" class="container text-center" style="padding-top: 2rem">
-  			<div class="row">
-  				<div class="col">
-  					<h1>SOBRE MIM</h1>
-                    <hr>
+  			<div class="row cardMain">
+  				<div class="col ">
+  					<h1 class="text-light">SOBRE MIM</h1>
+                    <hr style="background-color: #fff">
   				</div>
   				<div class="w-100"></div>
 
-    			<div class="col-sm rounded">
+    			<div class="col-sm opacidade-2 rounded">
     				<div class="card mb-3">
-    					<h1 class="display-2 tituloCard card-header">Sobre</h1>
+    					<h1 class="display-2 tituloCard card-header ">Sobre</h1>
     					<div class="card-body">
     						<h4 class="card-title">Apresentação</h4>
                             <div class="card-text" style="text-align: justify;">
     						  <p>Olá, caro visitante. Bom, me chamo Felipe e tenho 18 anos. Atualmente estudo na Universidade Federal do Paraná (UFPR) cursando Licenciatura em Computação (2° Semestre). Gosto muito de programação e tudo que envolva tecnologia, além disso, sou um grande fã de jogos. Ainda estou iniciando no mundo da programação, mas gosto de aprender e melhorar sempre.</p>
                                 <p>Ao decorrer desse Portfólio, você ira ver alguns projetos que estou desenvolvendo e quais as áreas estou focando em aprender <b>HOJE</b>.</p>
                             </div>
-                            <hr>
+                            <hr style="padding-top: 7%; padding-bottom: 7%">
                             <h5 class="card-tittle">Licenciatura em Computação</h5>
                             <img src="http://www.palotina.ufpr.br/portal/wp-content/uploads/2016/02/logo02-1-1-e1459433145566-768x393.png" class="logoUFPR"/>
                             <div class="card-text" style="text-align: justify;">
@@ -127,7 +131,7 @@
 
 
     			<div class="col-sm rounded">
-    				<div class="card mb-3">
+    				<div class="card mb-3 opacidade-2">
     					<h1 class="display-2 tituloCard card-header">Skills</h1>
     					<div class="card-body">
 
@@ -147,7 +151,7 @@
     										<i class="fa fa-star fa-2x estrelas"></i>
     										<i class="fa fa-star fa-2x estrelas"></i>
     										<i class="fa fa-star fa-2x estrelas"></i>
-    										<i class="fa fa-star-o fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
     									</p>
     								</div>
     							</div>
@@ -163,9 +167,9 @@
     									<p class="card-text">
     										<i class="fa fa-star fa-2x estrelas"></i>
     										<i class="fa fa-star fa-2x estrelas"></i>
-    										<i class="fa fa-star-o fa-2x estrelas"></i>
-    										<i class="fa fa-star-o fa-2x estrelas"></i>
-    										<i class="fa fa-star-o fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
     									</p>
     								</div>
     							</div>
@@ -181,9 +185,9 @@
     									<p class="card-text">
     										<i class="fa fa-star fa-2x estrelas"></i>
     										<i class="fa fa-star fa-2x estrelas"></i>
-    										<i class="fa fa-star fa-2x estrelas"></i>
-    										<i class="fa fa-star-half-o fa-2x estrelas"></i>
-    										<i class="fa fa-star-o fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
     									</p>
     								</div>
     							</div>
@@ -199,9 +203,9 @@
     									<p class="card-text">
     										<i class="fa fa-star fa-2x estrelas"></i>
     										<i class="fa fa-star fa-2x estrelas"></i>
-    										<i class="fa fa-star-o fa-2x estrelas"></i>
-    										<i class="fa fa-star-o fa-2x estrelas"></i>
-    										<i class="fa fa-star-o fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
     									</p>
     								</div>
     							</div>
@@ -217,9 +221,9 @@
     									<p class="card-text">
     										<i class="fa fa-star fa-2x estrelas"></i>
     										<i class="fa fa-star fa-2x estrelas"></i>
-    										<i class="fa fa-star-o fa-2x estrelas"></i>
-    										<i class="fa fa-star-o fa-2x estrelas"></i>
-    										<i class="fa fa-star-o fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
     									</p>
     								</div>
     							</div>
@@ -235,9 +239,9 @@
     									<p class="card-text">
     										<i class="fa fa-star fa-2x estrelas"></i>
     										<i class="fa fa-star fa-2x estrelas"></i>
-    										<i class="fa fa-star-half-o fa-2x estrelas"></i>
-    										<i class="fa fa-star-o fa-2x estrelas"></i>
-    										<i class="fa fa-star-o fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
+    										<i class="far fa-star fa-2x estrelas"></i>
     									</p>
     								</div>
     							</div>
@@ -249,8 +253,9 @@
   			</div>
 		</div>
         </div>
+        </div>
 
-        <div class="creditos-dark text-light">
+        <div class="creditos-dark text-light div-sombra">
                 <a class="btn btn-dark" href="#ini"><i class="fa fa-chevron-up"></i></a>
         </div>
         <footer class="creditos text-light"><b>2017</b> - Felipe Vieira Sobral</footer>
