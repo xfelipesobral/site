@@ -1,0 +1,13 @@
+.topo{
+    height: 100vh;
+    background-color: aquamarine;
+}
+
+.titulo{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); 
+    color: #fff;
+    font-size: 10rem;
+    text-align: center;
+}
