@@ -1,26 +1,31 @@
-a{
-    color: #ff8200;
+body{
+    color: #202020;
+}
+
+#rodape{
+    margin-top: 70px;
+    text-align: center
 }
 
 ::selection {
-    background: #ff8200;
+    background: #0E4749;
     color: #fff;
 }
 
 ::-moz-selection{
-    background: #ff8200;
+    background: #0E4749;
     color: #fff;
 }
 
 .topo{
     width: 100%;
     height: 100vh;
-    background-image: url('../img/bgpt.svg');
+    background-image: url("../img/bgpt-transp.svg");
     background-attachment: fixed;
 }
 
 .trabalhos{
-    background-image: url('../img/bgpt-branco.svg');
+    background-image: url("../img/bgpt-branco.svg");
     margin: 5px 0 60px 0
 }
 
@@ -41,6 +46,7 @@ a{
 .titulo{
     color: #fff;
     font-size: 10rem;
+    font-weight: 100;
 }
 
 .trabalho-img{
@@ -62,4 +68,8 @@ a{
 
 .social:hover{
     filter: brightness(100%);
+}
+
+.pequeno{
+    font-weight: 100;
 }
