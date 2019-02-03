@@ -16,19 +16,19 @@ function escolhecor(){
     switch(cor){
 
         case 0:
-            cor = "#002626";
+            cor = "#1d1d1d";
             break;
 
         case 1:
-            cor = "#031314";
+            cor = "#041226";
             break;
 
         case 2:
-            cor = "#2C3A0A";
+            cor = "#001432";
             break;
         
         case 3:
-            cor = "#421905";
+            cor = "#150032";
             break;
     }
     

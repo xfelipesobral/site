@@ -7,13 +7,27 @@ body{
     text-align: center
 }
 
+#curriculo{
+    border-color: #0d40ad;
+    background-color: #0d40ad;
+    border-radius: 0;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+#curriculo:hover{
+    background-color: #202020;
+    border-color: #202020;
+    color: #fff;
+}
+
 ::selection {
-    background: #0E4749;
+    background: #002766;
     color: #fff;
 }
 
 ::-moz-selection{
-    background: #0E4749;
+    background: #002766;
     color: #fff;
 }
 
@@ -51,7 +65,7 @@ body{
 
 .trabalho-img{
     width: 250px;
-    height: 250px;
+    height: 400px;
     transition: 0.3s;
 }
 
@@ -73,3 +87,4 @@ body{
 .pequeno{
     font-weight: 100;
 }
+
