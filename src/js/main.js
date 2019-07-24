@@ -1,15 +1,3 @@
-function bomx(){
-    var d = new Date();
-    if(d.getHours() >= 6 && d.getHours() < 12){
-        document.write("bom dia");
-        return;
-    } else if(d.getHours() >= 12 && d.getHours() < 18){
-        document.write("boa tarde");
-        return;
-    }
-    document.write("boa noite");
-}
-
 function escolhecor(){
     var cor = Math.floor(Math.random() * 4);
 
@@ -37,6 +25,37 @@ function escolhecor(){
     $("#cabecalho").fadeTo("slow", 1);
 }
 
+function carregar(pagina){
+    $("#corpo").load(`paginas/${pagina}.html`);
+}
+
+function navegar(pagina){
+    var index = 0;
+
+    if(pagina){
+        window.location.href = pagina;
+    }
+
+    if(window.location.hash !== ""){
+        index = window.location.hash;
+    }
+
+    switch(index){
+        
+        case "#biblioteca":
+            carregar("biblioteca");
+            break;            
+
+        default:
+            carregar("inicio");         
+            break;
+
+    }
+
+}
+
 $(document).ready(function(){
     escolhecor();
+    navegar();
 });
+

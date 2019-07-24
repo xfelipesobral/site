@@ -61,12 +61,14 @@ body{
     color: #fff;
     font-size: 10rem;
     font-weight: 100;
+    cursor: pointer;
 }
 
 .trabalho-img{
     width: 250px;
-    height: 400px;
+    height: 250px;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .trabalho-img:hover{
