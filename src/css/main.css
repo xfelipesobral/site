@@ -2,6 +2,11 @@ body{
     color: #202020;
 }
 
+a {
+	color: #0d40ad;
+	text-decoration: none;
+}
+
 #rodape{
     margin-top: 70px;
     text-align: center
