@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0px;
+    outline: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+#cabecalho {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/background2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#cabecalho img {
+    width: 250px;
+    height: 250px;
+    fill: #fff;
+}
+
+#apresentacao {
+    text-align: center;
+}
+
+#apresentacao #sobremim h1 {
+    text-align: center;
+    font-weight: 300;
+}
+
+#trabalhos {
+    background-image: url('../images/background1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 2% 0;
+}
+
+#trabalhos h1 {
+    text-align: center;
+    font-weight: 300;
+}
+
+#trabalhos article {
+    margin: 5% 0;
+    text-align: justify;
+}
+
+#trabalhos article footer {
+    margin: 5px 0;
+    color: #3b3b3b;
+}
+
+#trabalhos article h1 {
+    text-align: left;
+}
+
+#trabalhos article header p {
+    margin: 5px 0;
+    color: #3b3b3b;
+    font-style: italic;
+}
+
+#trabalhos .container {
+    background: #fff;
+    margin: 5%;
+}
+
+#social h1 {
+    text-align: center;
+    font-weight: 300;
+}
+
+.link {
+    text-decoration: none;
+    color: #1B3440;
+}
+
+.link:hover {
+    color: #13688f;
+}
+
+.container {
+    margin: 5% 5%;
+    padding: 5%;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 0px 28px -13px rgba(0,0,0,0.17);
+    -moz-box-shadow: 0px 0px 28px -13px rgba(0,0,0,0.17);
+    box-shadow: 0px 0px 28px -13px rgba(0,0,0,0.17);
+}
+
