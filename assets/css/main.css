@@ -106,8 +106,9 @@ h1, h2 {
 }
 
 #social ul li img:hover {
-    filter: invert(75%);
-    -webkit-filter: invert(75%);
+    filter: invert(80%);
+    -webkit-filter: invert(80%);
+    transform: translateY(-5px);
 }
 
 #trabalhos {
@@ -217,4 +218,5 @@ h1, h2 {
 .subir:hover{
     filter: invert(30%);
     -webkit-filter: invert(30%);
+    transform: translateY(-5px);
 }
