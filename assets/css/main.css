@@ -140,6 +140,15 @@ h1, h2 {
     margin: 5%;
 }
 
+#projetos {
+    text-align: center;
+}
+
+#projetos ul li {
+    display: inline-block;
+    text-decoration: none;
+}
+
 #rodape {
     background: #0f0f0f;
     text-align: center;
@@ -219,4 +228,34 @@ h1, h2 {
     filter: invert(30%);
     -webkit-filter: invert(30%);
     transform: translateY(-5px);
+}
+
+.item {
+    width: 47%;
+    height: auto;
+    background: #fff;
+}
+
+.item img {
+    width: 100%;
+}
+
+.item .descricao {
+    text-align: left;
+    padding: 15px;
+}
+
+.item .descricao p {
+    margin: 10px 0;
+    text-align: justify;
+}
+
+@media (max-width: 600px) { 
+    #projetos ul li {
+        margin: 5% 0;
+    }
+
+    .item {
+        width: 100%;
+    }
 }
