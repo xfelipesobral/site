@@ -43,8 +43,8 @@ h1, h2 {
 }
 
 #cabecalho a:hover {
-    filter: invert(15%);
-    -webkit-filter: invert(15%);
+    filter: invert(5%);
+    -webkit-filter: invert(5%);
 }
 
 #apresentacao {
@@ -106,9 +106,19 @@ h1, h2 {
 }
 
 #social ul li img:hover {
+    transition: all 0.2s;
     filter: invert(80%);
     -webkit-filter: invert(80%);
     transform: translateY(-5px);
+}
+
+#social .link {
+    color: #fff;
+}
+
+#social .link:hover {
+    transition: all 0.2s;
+    color: #e0e0e0;
 }
 
 #trabalhos {
@@ -147,6 +157,7 @@ h1, h2 {
 #projetos ul li {
     display: inline-block;
     text-decoration: none;
+    margin: 5px;
 }
 
 #rodape {
@@ -179,6 +190,7 @@ h1, h2 {
 }
 
 .link:hover {
+    transition: all 0.2s;
     color: #13688f;
 }
 
@@ -210,6 +222,7 @@ h1, h2 {
 }
 
 .botao:hover {
+    transition: all 0.2s;
     background-color: #424242;
 }
 
@@ -225,6 +238,7 @@ h1, h2 {
 }
 
 .subir:hover{
+    transition: all 0.2s;
     filter: invert(30%);
     -webkit-filter: invert(30%);
     transform: translateY(-5px);
@@ -234,6 +248,7 @@ h1, h2 {
     width: 47%;
     height: auto;
     background: #fff;
+    border: 1px #e6e6e6 solid;
 }
 
 .item img {
