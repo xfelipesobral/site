@@ -184,6 +184,10 @@ h1, h2 {
     height: 75px;
 }
 
+#rodape a {
+    color: #fff
+}
+
 .link {
     text-decoration: none;
     color: #1B3440;
