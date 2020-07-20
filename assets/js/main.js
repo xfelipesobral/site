@@ -29,27 +29,41 @@ projeto(
     "Zumbie Invaders",
     `Jogo criado na disciplina de Oficina de Computação.`,
     "https://github.com/xfelipesobral/ZumbieInvaders"
-);
+)
 
 projeto(
     "assets/images/projetos/gokuvsvegeta.jpg",
     "Goku VS Vegeta",
     `Jogo multiplayer criado na disciplina de Redes.`,
     "https://github.com/xfelipesobral/Goku-VS-Vegeta-SOCKET"
-);
+)
 
 projeto(
     "assets/images/projetos/fecitec.jpg",
     "Fecitec Site",
     `Site criado para 9ª Feira de Ciências e Tecnologia (FECITEC).`,
     "https://github.com/xfelipesobral/fecitec"
-);
+)
 
 projeto(
     "assets/images/projetos/webquest_colombinho.jpg",
     "USA WebQuest",
     `Site criado na disciplina de Didática da Computação.`,
     "https://github.com/xfelipesobral/WebQuestUSA"
-);
+)
+
+// projeto(
+//     "assets/images/projetos/cartao.png",
+//     "Cartão de visita",
+//     ``,
+//     "https://xfelipesobral.github.io/Portfolio/assets/images/projetos/cartao.png"
+// )
+
+// projeto(
+//     "assets/images/projetos/bannerufpr.png",
+//     "Poster",
+//     ``,
+//     "https://xfelipesobral.github.io/Portfolio/assets/images/projetos/bannerufpr.png"
+// )
 
 
