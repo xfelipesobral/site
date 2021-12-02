@@ -103,10 +103,10 @@ h1, h2 {
     height: 50px;
     filter: invert(100%);
     -webkit-filter: invert(100%);
+    transition: all 0.5s;
 }
 
 #social ul li img:hover {
-    transition: all 0.2s;
     filter: invert(80%);
     -webkit-filter: invert(80%);
     transform: translateY(-5px);
@@ -117,12 +117,12 @@ h1, h2 {
 }
 
 #social .link:hover {
-    transition: all 0.2s;
     color: #e0e0e0;
 }
 
 #trabalhos {
     text-align: center;
+    max-width: 1250px;
 }
 
 #trabalhos article {
@@ -199,7 +199,7 @@ h1, h2 {
 }
 
 .container {
-    margin: 5% 5%;
+    margin: 5%;
     padding: 5%;
 }
 
@@ -234,6 +234,7 @@ h1, h2 {
     display: block;
     text-align: center;
     margin: 15px 0;
+    transition: all 0.3s;
 }
 
 .subir img {
@@ -242,7 +243,6 @@ h1, h2 {
 }
 
 .subir:hover{
-    transition: all 0.2s;
     filter: invert(30%);
     -webkit-filter: invert(30%);
     transform: translateY(-5px);
@@ -267,6 +267,12 @@ h1, h2 {
 .item .descricao p {
     margin: 10px 0;
     text-align: justify;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 600px) { 
