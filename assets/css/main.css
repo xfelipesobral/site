@@ -50,6 +50,7 @@ h1, h2 {
 #apresentacao {
     text-align: center;
     font-weight: 300;
+    margin: 3% 0;
 }
 
 #apresentacao h1 {
@@ -123,6 +124,7 @@ h1, h2 {
 #trabalhos {
     text-align: center;
     max-width: 1250px;
+    min-width: 100%;
 }
 
 #trabalhos article {
@@ -199,8 +201,7 @@ h1, h2 {
 }
 
 .container {
-    margin: 5%;
-    padding: 5%;
+    padding: 3%;
 }
 
 .sombra {
@@ -223,6 +224,7 @@ h1, h2 {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.8rem;
+    margin-top: 5px;
 }
 
 .botao:hover {
@@ -283,4 +285,36 @@ h1, h2 {
     .item {
         width: 100%;
     }
+}
+
+.erro {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.erro img {
+    margin-bottom: 45px;
+}
+
+.erro h1 {
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+.erro a {
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 15px 20px;
+    margin-top: 45px;
+    transition: .3s all;
+}
+
+.erro a:hover {
+    background-color: #fff;
+    color: #000;
 }
