@@ -48,13 +48,30 @@ h1, h2 {
 }
 
 #apresentacao {
-    text-align: center;
+    display: flex;
     font-weight: 300;
     margin: 3% 0;
+    display: flex;
+    justify-content: center;
+}
+
+#apresentacao .container {
+    max-width: 900px;
+    width: 100%;
+}
+
+#apresentacao #nome {
+    display: flex;
+    align-items: center;
+} 
+
+#apresentacao #mao {
+    width: 64px;
 }
 
 #apresentacao h1 {
     color: #222222;
+    margin-left: 10px;
 }
 
 #apresentacao #sobremim {
@@ -122,9 +139,14 @@ h1, h2 {
 }
 
 #trabalhos {
+    display: flex;
+    justify-content: center;
+}
+
+#trabalhos .container {
+    max-width: 1150px;
+    width: 100%;
     text-align: center;
-    max-width: 1250px;
-    min-width: 100%;
 }
 
 #trabalhos article {
@@ -154,12 +176,36 @@ h1, h2 {
 
 #projetos {
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
-#projetos ul li {
-    display: inline-block;
-    text-decoration: none;
+#projetos .container {
+    max-width: 1250px;
+}
+
+#projetos h1 {
+    margin-bottom: 25px;
+}
+
+#projetos #lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#projetos #lista .item {
     margin: 5px;
+    max-width: 50%;
+}
+
+#projetos #lista .item a {
+    text-decoration: none;
+    color: #000;
+}
+
+#projetos #lista .item a:hover {
+    text-decoration: underline;
 }
 
 #rodape {
@@ -277,13 +323,38 @@ h1, h2 {
     align-items: center;
 }
 
-@media (max-width: 600px) { 
-    #projetos ul li {
-        margin: 5% 0;
+@media (max-width: 700px) {
+    #apresentacao {
+        margin: 50px 10px;
+        font-size: 1rem;
+        text-align: justify;
     }
 
-    .item {
+    #apresentacao #nome {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #apresentacao #sobremim p {
+        font-size: 1.2rem;
+    }
+
+    #apresentacao #interesses p {
+        font-size: 1rem;
+    }
+
+    #trabalhos article header h1 {
+        font-size: 1.2rem;
+    }
+
+    #projetos #lista {
+        display: block;
+    }
+
+    #projetos #lista .item {
+        max-width: 100%;
         width: 100%;
+        margin: 0 0 25px 0;
     }
 }
 

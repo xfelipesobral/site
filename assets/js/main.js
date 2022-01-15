@@ -1,25 +1,30 @@
-// Renderiza projeto na tela
-function projeto(img, titulo, info, url){
+// Carrega animação da mão
+const aniMao = bodymovin.loadAnimation({
+    container: document.getElementById("mao"),
+    path: "assets/animations/80604-hand.json",
+    loop: true,
+    autoplay: true
+})
 
-    const elemento = document.createElement("li");
-    elemento.className = "item sombra";
-    
+// Renderiza projeto na tela
+function projeto(img, titulo, info, url) {
+
+    const elemento = document.createElement("div");
+    elemento.className = "item";
+
     const template = `
             <img src="${img}" alt="Imagem do projeto ${titulo}" />
             <div class="descricao">
-                <h2>${titulo}</h2>
+                <h2><a href="${url}" target="_BLANK">${titulo}</a></h2>
                 <p>
                     ${info} 
                 </p>
-                <a class="botao" href="${url}" target="_BLANK">+ INFORMÇÕES</a>
             </div>
-            
     `;
 
     elemento.innerHTML = template;
 
-    document.getElementById("lista-projetos").appendChild(elemento);
-
+    document.getElementById("lista").appendChild(elemento);
 }
 
 
@@ -35,7 +40,7 @@ projeto(
 )
 
 projeto(
-    "assets/images/projetos/gokuvsvegeta.jpg",
+    "assets/images/projetos/gokuvsvegeta.png",
     "Goku VS. Vegeta",
     `Jogo multiplayer criado na disciplina de Redes pela UFPR Palotina com a orientação do professor
     Marcos V. O. de Assis. Desenvolvido em Python utilizando socket e a biblioteca PyGame. Neste jogo duas pessoas podem jogar em rede e 
@@ -45,7 +50,7 @@ projeto(
 )
 
 projeto(
-    "assets/images/projetos/fecitec.jpg",
+    "assets/images/projetos/fecitec.png",
     "Site para FECITEC",
     `Iniciando no projeto como voluntário e depois como bolsista, desenvolvi e manti o site para Feira de Ciências e Tecnologia (FECITEC). Atuo no projeto
     desde sua 9ª edição.`,
