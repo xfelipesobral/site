@@ -40,7 +40,7 @@ projeto(
 )
 
 projeto(
-    "assets/images/projetos/gokuvsvegeta.png",
+    "assets/images/projetos/gokuvsvegeta.jpeg",
     "Goku VS. Vegeta",
     `Jogo multiplayer criado na disciplina de Redes pela UFPR Palotina com a orientação do professor
     Marcos V. O. de Assis. Desenvolvido em Python utilizando socket e a biblioteca PyGame. Neste jogo duas pessoas podem jogar em rede e 
@@ -50,7 +50,7 @@ projeto(
 )
 
 projeto(
-    "assets/images/projetos/fecitec.png",
+    "assets/images/projetos/fecitec.jpeg",
     "Site para FECITEC",
     `Iniciando no projeto como voluntário e depois como bolsista, desenvolvi e manti o site para Feira de Ciências e Tecnologia (FECITEC). Atuo no projeto
     desde sua 9ª edição.`,
