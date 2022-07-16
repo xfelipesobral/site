@@ -2,7 +2,7 @@
 
 * {
     margin: 0;
-    padding: 0px;
+    padding: 0;
     outline: 0;
 }
 
@@ -38,7 +38,8 @@ h1, h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../images/background2.jpg');
+    background-color: #02171f;
+    background-image: url('../images/liquid-cheese.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -48,6 +49,7 @@ h1, h2 {
 #cabecalho img {
     width: 250px;
     height: 250px;
+    z-index: 1;
 }
 
 #cabecalho a:hover {
@@ -101,11 +103,9 @@ h1, h2 {
 }
 
 #social {
-    background-image: url('../images/background3.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+    background-image: url('../images/endless-clouds.svg');
+    background-color: #121d55;
+    background-repeat: repeat;
     text-align: center;
     color: #fff;
 }
