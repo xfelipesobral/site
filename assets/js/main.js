@@ -51,7 +51,7 @@ projeto(
 
 projeto(
     "assets/images/projetos/fecitec.jpeg",
-    "Site para FECITEC",
+    "FECITEC",
     `Iniciando no projeto como voluntário e depois como bolsista, desenvolvi e manti o site para Feira de Ciências e Tecnologia (FECITEC). Atuo no projeto
     desde sua 9ª edição.`,
     "https://github.com/xfelipesobral/fecitec"

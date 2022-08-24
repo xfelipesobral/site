@@ -10,7 +10,8 @@ html {
     scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -29,7 +30,8 @@ h1 {
     font-size: 2rem;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-weight: 300;
 }
 
@@ -38,12 +40,12 @@ h1, h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #02171f;
-    background-image: url('../images/liquid-cheese.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     background-attachment: fixed;
+    background-color: #191919;
+    opacity: 1;
+    background-image: radial-gradient(#4252a3 0.65px, #192358 0.65px);
+    background-attachment: fixed;
+    background-size: 13px 13px;
 }
 
 #cabecalho img {
@@ -73,7 +75,7 @@ h1, h2 {
 #apresentacao #nome {
     display: flex;
     align-items: center;
-} 
+}
 
 #apresentacao #mao {
     width: 64px;
@@ -103,11 +105,13 @@ h1, h2 {
 }
 
 #social {
-    background-image: url('../images/endless-clouds.svg');
-    background-color: #121d55;
-    background-repeat: repeat;
     text-align: center;
     color: #fff;
+    background-color: #000000;
+    opacity: 0.9;
+    background-size: 10px 10px;
+    background-image: repeating-linear-gradient(45deg, #0b0b0b 0, #0b0b0b 1px, #000000 0, #000000 50%);
+    background-attachment: fixed;
 }
 
 #social .container {
@@ -256,9 +260,9 @@ footer a {
 }
 
 .sombra {
-    -webkit-box-shadow: 0px 0px 28px -13px rgba(0,0,0,0.17);
-    -moz-box-shadow: 0px 0px 28px -13px rgba(0,0,0,0.17);
-    box-shadow: 0px 0px 28px -13px rgba(0,0,0,0.17);
+    -webkit-box-shadow: 0px 0px 28px -13px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 0px 0px 28px -13px rgba(0, 0, 0, 0.17);
+    box-shadow: 0px 0px 28px -13px rgba(0, 0, 0, 0.17);
 }
 
 .botao {
@@ -295,7 +299,7 @@ footer a {
     height: 50px;
 }
 
-.subir:hover{
+.subir:hover {
     filter: invert(30%);
     -webkit-filter: invert(30%);
     transform: translateY(-5px);
