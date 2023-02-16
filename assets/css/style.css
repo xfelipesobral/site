@@ -57,9 +57,14 @@ header h1 span {
 }
 
 @media (max-width: 700px) {
+    body {
+        display: block;
+    }
+
     header {
         flex-direction: column-reverse;
         text-align: center;
+        margin-top: 25px;
     }
 
     header h1 {
@@ -75,5 +80,11 @@ header h1 span {
     header #social {
         align-items: center;
         justify-content: center;
+    }
+}
+
+@media (max-width: 700px) {
+    header h1 {
+        font-size: 40px;
     }
 }
