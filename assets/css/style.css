@@ -56,9 +56,16 @@ header h1 span {
     color: #9BBD2F;
 }
 
+@media (max-width: 850px) {
+    header h1 {
+        font-size: 50px;
+    }
+}
+
 @media (max-width: 700px) {
     body {
         display: block;
+        height: auto;
     }
 
     header {
