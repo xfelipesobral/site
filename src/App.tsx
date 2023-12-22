@@ -2,10 +2,22 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Home from './pages/home'
 import Error from './pages/error'
+import Layout from './pages/layout'
 
 const routes = createBrowserRouter([
-	{ path: '/', element: <Home /> },
-	{ path: '/erro/:id', element: <Error /> }
+	{
+		element: <Layout />,
+		children: [
+			{
+				path: '/',
+				element: <Home />
+			}
+		]
+	},
+	{ 
+		path: '/erro/:id', 
+		element: <Error /> 
+	}
 ])
 
 export default function App() {
