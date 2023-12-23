@@ -4,13 +4,20 @@ export default function Layout() {
 
     return (
         <div>
-            <div className='bg-slate-50 p-2'>
-                <p>Cabecalho</p>
-            </div>
+            <header className='bg-white p-4 flex justify-between'>
+                <h1>Felipe Sobral</h1>
+                <nav>
+                    <p>menu</p>
+                </nav>
+            </header>
 
-            <Outlet />
+            <main>
+                <Outlet />
+            </main>
 
-            <p>rodape</p>
+            <footer>
+                <p>rodape</p>
+            </footer>
         </div>
     )
 }
