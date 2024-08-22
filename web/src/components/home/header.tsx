@@ -14,7 +14,7 @@ export default function HomeHeader() {
                     <p>Trabalho na área de desenvolvimento pela SoftRos Sistemas e sou acadêmico no curso de Licenciatura em Computação pela UFPR setor Palotina.</p>
                 </div>
             </div>
-            <div className='h-80'>
+            <div className='max-w-md h-80'>
                 <DotLottieReact
                     src='assets/lottie/dev.json'
                     loop
