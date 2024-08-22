@@ -1,14 +1,24 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-	title: 'Felipe V. Sobral',
-	description: 'Olá, me chamo Felipe!',
-	applicationName: 'Felipe V. Sobral',
+	title: 'Felipe Sobral',
+	description: 'Olá, me chamo Felipe. Sou desenvolvedor Mobile & Web. Vamos conversar?',
+	applicationName: 'Felipe Sobral',
+	keywords: ['Felipe Sobral', 'Felipe', 'Sobral', 'Desenvolvedor', 'Paraná', 'Brazil', 'Brasil', 'PR', 'BR', 'Developer', 'Programmer', 'Desenvolvedor Mobile', 'Desenvolvedor Web', 'Aplicativos', 'Sites', 'Programação', 'Tecnologia'],
+	openGraph: {
+		title: 'Felipe Sobral',
+		url: 'https://felipesobral.com.br',
+		siteName: 'Felipe Sobral',
+		description: 'Olá, me chamo Felipe. Sou desenvolvedor Mobile & Web. Vamos conversar?',
+		locale: 'pt_BR',
+		type: 'website',
+	},
+	robots: 'index, follow',
 }
 
 export default function RootLayout({
@@ -17,26 +27,37 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 
+	const year = new Date().getFullYear()
+
 	return (
 		<html lang='pt-BR'>
-			<body className={inter.className}>
+			<body className={montserrat.className}>
 				<script
 					type='application/ld+json'
 					dangerouslySetInnerHTML={{
 						__html: JSON.stringify({
 							'@context': 'https://schema.org',
 							'@type': 'Person',
-							name: 'Felipe V. Sobral',
+							name: 'Felipe Sobral',
 							url: 'https://felipesobral.com.br',
+							jobTitle: 'Desenvolvedor Mobile & Web',
 							sameAs: [
 								'https://www.instagram.com/xfelipesobral',
 								'https://github.com/xfelipesobral',
 								'https://www.linkedin.com/in/felipesobralfs'
-							]
+							],
+							email: 'mailto:contato@felipesobral.com.br'
 						})
 					}}
 				/>
-				{children}
+				<main className='flex min-h-screen flex-col items-center justify-between bg-stone-950 text-white p-10'>
+					<div className='max-w-6xl w-full'>
+						{children}
+					</div>
+					<div>
+						<p className='text-sm'>© {year} Felipe V. Sobral</p>
+					</div>
+				</main>
 			</body>
 		</html>
 	)
