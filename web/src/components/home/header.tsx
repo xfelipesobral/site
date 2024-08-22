@@ -3,9 +3,9 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 export default function HomeHeader() {
 
     return (
-        <div className='flex flex-col-reverse lg:flex-row mt-10 xl:mt-20 items-center gap-4'>
+        <div className='flex flex-col-reverse lg:flex-row mt-2 xl:mt-20 items-center gap-4'>
             <div className='grid gap-4 flex-1'>
-                <div className='text-3xl xl:text-5xl font-bold  tracking-wide'>
+                <div className='text-2xl md:text-4xl xl:text-5xl font-bold  tracking-wide'>
                     <p>Olá, me chamo Felipe 👋</p>
                     <p>Dev Mobile & Web</p>
                 </div>

@@ -50,11 +50,11 @@ export default function RootLayout({
 						})
 					}}
 				/>
-				<main className='flex min-h-screen flex-col items-center justify-between bg-stone-950 text-white p-10'>
+				<main className='flex min-h-screen flex-col items-center justify-between bg-stone-950 text-white p-6 sm:p-10'>
 					<div className='max-w-6xl w-full'>
 						{children}
 					</div>
-					<div>
+					<div className='mt-10'>
 						<p className='text-sm'>© {year} Felipe V. Sobral</p>
 					</div>
 				</main>
