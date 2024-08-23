@@ -1,6 +1,8 @@
-import { Request, Response } from 'express'
-
 import Axios from 'axios'
+import { Request, Response } from 'express'
+import { differenceInMinutes } from 'date-fns'
+
+import { lastItem } from '../../modules/lastItem'
 
 interface Game {
 	appid: number
@@ -22,8 +24,7 @@ interface SteamResponse {
 	}
 }
 
-
-export async function lastGamesPlayed(): Promise<LastGame[]> {
+export async function lastGamesPlayedApiSteam(): Promise<LastGame[]> {
 	try {
 		const steamKey = process.env.STEAM_API_KEY || ''
 
@@ -35,7 +36,7 @@ export async function lastGamesPlayed(): Promise<LastGame[]> {
 			params: {
 				key: steamKey,
 				steamid: '76561198131228650',
-				count: 3
+				count: 1
 			}
 		})
 
@@ -54,8 +55,53 @@ export async function lastGamesPlayed(): Promise<LastGame[]> {
 	}
 }
 
-export async function lastGamesPlayedHttp(req: Request, res: Response) {
-    const gamesList = await lastGamesPlayed()
+async function updateLastGameSteam() {
+	const gamesList = await lastGamesPlayedApiSteam()
 
-	res.status(200).json(gamesList)
+	if (gamesList.length > 0) {
+		const { name, img_banner_url, img_bg_url } = gamesList[0]
+
+		await lastItem.upsertItem({
+			id: 'steam',
+			type: 'GAME',
+			description: name,
+			imageUrl: img_banner_url,
+			backgroundUrl: img_bg_url,
+			lastUsed: new Date()
+		})
+	} else {
+		await lastItem.upsertItem({
+			id: 'steam',
+			type: 'GAME',
+			description: '',
+			lastUsed: new Date()
+		})
+	}
+}
+
+export async function lastGameSteam() {
+	try {
+		const lastGame = await lastItem.findLastItemById('steam')
+
+		if (lastGame) {
+			const lastUpdatedInMinutes = differenceInMinutes(new Date(), lastGame.lastUsed)
+
+			if (lastUpdatedInMinutes > 60) {
+				throw new Error('Steam last updated is outdated')
+			}
+
+			return lastGame
+		} else {
+			throw new Error('Steam last game not found')
+		}
+	} catch {
+		await updateLastGameSteam()
+		return lastGameSteam()
+	}
+}
+
+export async function lastGamesPlayedHttp(req: Request, res: Response) {
+	const game = await lastGameSteam()
+
+	res.status(200).json(game)
 }

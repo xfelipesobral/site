@@ -1,5 +1,7 @@
 import { Router, Request, Response } from 'express'
 
+import { getLastItemsHttp } from '../services/lastItems/getLastItems'
+
 import { steamRoutes } from './steam.route'
 
 const router = Router()
@@ -11,5 +13,6 @@ router.get('/', (req: Request, res: Response) => {
 })
 
 router.use('/steam', steamRoutes)
+router.get('/lastItems', getLastItemsHttp)
 
 export default router

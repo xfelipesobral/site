@@ -1,0 +1,23 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model LastItem {
+    id            String       @id
+    description   String
+    imageUrl      String
+    backgroundUrl String
+    type          LastItemType
+    lastUsed      DateTime     @default(now())
+    updatedAt     DateTime     @updatedAt
+}
+
+enum LastItemType {
+    GAME
+    BOOK
+}
