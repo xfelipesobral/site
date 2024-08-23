@@ -36,7 +36,11 @@ export default function Home() {
 
 				<HomeSocials />
 
-				<HomeGames lastGames={lastGames} />
+				{
+					lastGames.length > 0 && (
+						<HomeGames lastGames={lastGames} />
+					)
+				}
 			</div>
 		</div>
 	)
