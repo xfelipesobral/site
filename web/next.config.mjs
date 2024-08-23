@@ -12,6 +12,11 @@ const nextConfig = {
                 hostname: 'shared.cloudflare.steamstatic.com',
             }
         ]
+    },
+    experimental: {
+        serverActions: {
+            allowedOrigins: ['felipesobral.com.br']
+        }
     }
 };
 
