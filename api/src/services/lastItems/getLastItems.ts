@@ -2,8 +2,8 @@ import { Request, Response } from 'express'
 
 import { lastItem } from '../../modules/lastItem'
 
-import { lastGamePsn } from '../psn/lastGamesPlayed'
-import { lastGameSteam } from '../steam/lastGamesPlayed'
+import { lastGamePsn } from '../psn/lastGamePsn'
+import { lastGameSteam } from '../steam/lastGameSteam'
 
 export async function getLastItemsHttp(req: Request, res: Response) {
     await lastGamePsn()

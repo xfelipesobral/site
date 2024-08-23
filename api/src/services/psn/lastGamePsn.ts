@@ -1,11 +1,10 @@
 import Axios from 'axios'
-import { Request, Response } from 'express'
 import { differenceInMinutes } from 'date-fns'
 import { JSDOM } from 'jsdom'
 
 import { lastItem } from '../../modules/lastItem'
 
-export async function lastGamesPlayedPsn() {
+export async function lastGamePlayedPsn() {
     try {
         const { data: html } = await Axios.get('https://psnprofiles.com/LipinGod')
 
@@ -39,7 +38,7 @@ export async function lastGamesPlayedPsn() {
 }
 
 async function updateLastGamePsn() {
-    const game = await lastGamesPlayedPsn()
+    const game = await lastGamePlayedPsn()
 
     if (game) {
         await lastItem.upsertItem({
@@ -79,10 +78,4 @@ export async function lastGamePsn() {
         await updateLastGamePsn()
         return lastGamePsn()
     }
-}
-
-export async function lastGamesPlayedHttp(req: Request, res: Response) {
-    const game = await lastGamePsn()
-
-    res.status(200).json(game)
 }

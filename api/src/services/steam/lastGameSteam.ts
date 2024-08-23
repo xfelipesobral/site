@@ -1,5 +1,5 @@
 import Axios from 'axios'
-import { Request, Response } from 'express'
+import { JSDOM } from 'jsdom'
 import { differenceInMinutes } from 'date-fns'
 
 import { lastItem } from '../../modules/lastItem'
@@ -35,8 +35,7 @@ export async function lastGamesPlayedApiSteam(): Promise<LastGame[]> {
 		const { data: { response: { games } } } = await Axios.get<SteamResponse>('https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1/', {
 			params: {
 				key: steamKey,
-				steamid: '76561198131228650',
-				count: 1
+				steamid: '76561198131228650'
 			}
 		})
 
@@ -55,18 +54,44 @@ export async function lastGamesPlayedApiSteam(): Promise<LastGame[]> {
 	}
 }
 
+export async function lastGamePlayedSteam() {
+	try {
+		const { data: html } = await Axios.get('https://steamcommunity.com/id/lipin')
+
+		const { window } = new JSDOM(html)
+
+		const game = window.document.querySelector('.recent_game .game_name a')
+
+		if (!game) {
+			throw new Error('Steam game not found')
+		}
+
+		const appId = (game.getAttribute('href') || '').replace('https://steamcommunity.com/app/', '')
+
+		const name = game.textContent || ''
+		const imageUrl = `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${appId}/header.jpg`
+		const backgroundUrl = `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${appId}/page_bg_raw.jpg`
+
+		return {
+			imageUrl,
+			name,
+			backgroundUrl
+		}
+	} catch {
+		return undefined
+	}
+}
+
 async function updateLastGameSteam() {
-	const gamesList = await lastGamesPlayedApiSteam()
+	const game = await lastGamePlayedSteam()
 
-	if (gamesList.length > 0) {
-		const { name, img_banner_url, img_bg_url } = gamesList[0]
-
+	if (game) {
 		await lastItem.upsertItem({
 			id: 'steam',
 			type: 'GAME',
-			description: name,
-			imageUrl: img_banner_url,
-			backgroundUrl: img_bg_url,
+			description: game.name,
+			imageUrl: game.imageUrl,
+			backgroundUrl: game.backgroundUrl,
 			lastUsed: new Date()
 		})
 	} else {
@@ -98,10 +123,4 @@ export async function lastGameSteam() {
 		await updateLastGameSteam()
 		return lastGameSteam()
 	}
-}
-
-export async function lastGamesPlayedHttp(req: Request, res: Response) {
-	const game = await lastGameSteam()
-
-	res.status(200).json(game)
 }

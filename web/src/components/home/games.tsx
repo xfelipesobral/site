@@ -12,9 +12,10 @@ export default function HomeGames({ lastGames }: Params) {
     const steamGame = lastGames.find(item => item.id === 'steam')
 
     return (
-        <div>
-            <p>Gosto muito de jogos</p>
-            <p>últimos jogos</p>
+        <div className='grid gap-4'>
+            <div>
+                <p className='font-semibold text-xl'>Jogados recentemente</p>
+            </div>
 
             <div className='flex flex-col lg:flex-row border divide-y lg:divide-x rounded-md bg-stone-900 border-stone-700 divide-stone-700 text-stone-300'>
                 {
