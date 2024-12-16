@@ -4,7 +4,14 @@ import { JSDOM } from 'jsdom'
 
 import { lastItem } from '../../modules/lastItem'
 
-export async function lastGamePlayedPsn() {
+type PsnGame = {
+    imageUrl: string
+    name: string
+    platform: string
+    backgroundUrl: string
+}
+
+export async function lastGamePlayedPsnProfiles(): Promise<PsnGame | undefined> {
     try {
         const { data: html } = await Axios.get('https://psnprofiles.com/LipinGod')
 
@@ -30,15 +37,53 @@ export async function lastGamePlayedPsn() {
             imageUrl,
             name,
             platform,
-            backgroundUrl
+            backgroundUrl,
         }
-    } catch {
+    } catch (e) {
+        return undefined
+    }
+}
+
+export async function lastGamePlayedPsnExophase(): Promise<PsnGame | undefined> {
+    try {
+        const { data: html } = await Axios.get('https://www.exophase.com/psn/user/LipinGod')
+
+        const { window } = new JSDOM(html)
+
+        const name = window.document.querySelector('#app-Profile h3')?.textContent || ''
+        const platform = window.document.querySelector('#app-Profile .platforms span')?.textContent || ''
+        let imageUrl = window.document.querySelector('#app-Profile .image img')?.getAttribute('src') || ''
+        let backgroundUrl = ''
+
+        const gamePageUrl = window.document.querySelector('#app-Profile h3 a')?.getAttribute('href') || ''
+        if (gamePageUrl) {
+            const { data: htmlGamePage } = await Axios.get(gamePageUrl)
+            const { window: windowGamePage } = new JSDOM(htmlGamePage)
+
+            const banners = windowGamePage.document.querySelectorAll('.slide-item')
+            if (banners.length > 0) {
+                const bannerDiv = banners[banners.length - 1] as HTMLDivElement
+                backgroundUrl = (bannerDiv?.style?.backgroundImage || '').slice(5, -2)
+            }
+        }
+
+        return {
+            imageUrl,
+            name,
+            platform,
+            backgroundUrl,
+        }
+    } catch (e) {
         return undefined
     }
 }
 
 async function updateLastGamePsn() {
-    const game = await lastGamePlayedPsn()
+    let game = await lastGamePlayedPsnExophase() // Tenta pegar o jogo do PSN Profiles
+
+    if (!game) {
+        game = await lastGamePlayedPsnProfiles() // Tenta pegar o jogo do Exophase
+    }
 
     if (game) {
         await lastItem.upsertItem({
@@ -47,19 +92,21 @@ async function updateLastGamePsn() {
             description: game.name,
             imageUrl: game.imageUrl,
             backgroundUrl: game.backgroundUrl,
-            lastUsed: new Date()
+            lastUsed: new Date(),
         })
     } else {
         await lastItem.upsertItem({
             id: 'psn',
             type: 'GAME',
             description: '',
-            lastUsed: new Date()
+            lastUsed: new Date(),
         })
     }
 }
 
 export async function lastGamePsn() {
+    await updateLastGamePsn()
+
     try {
         const lastGame = await lastItem.findLastItemById('psn')
 
