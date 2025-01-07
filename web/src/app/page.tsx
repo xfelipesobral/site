@@ -8,40 +8,35 @@ import HomeGames from '@/components/home/games'
 import HomeHeader from '@/components/home/header'
 import HomeSocials from '@/components/home/socials'
 
-
 export default function Home() {
-	const [lastItems, setLastItems] = useState<LastItem[]>([])
+    const [lastItems, setLastItems] = useState<LastItem[]>([])
 
-	const refTimeout = useRef<number>()
+    const refTimeout = useRef<number>()
 
-	useEffect(() => {
-		window.clearTimeout(refTimeout.current)
+    useEffect(() => {
+        window.clearTimeout(refTimeout.current)
 
-		refTimeout.current = window.setTimeout(() => {
-			findLastItems()
-		}, 300)
-	}, [])
+        refTimeout.current = window.setTimeout(() => {
+            findLastItems()
+        }, 300)
+    }, [])
 
-	const findLastItems = async () => {
-		const items = await apiLastItems()
-		setLastItems(items)
-	}
+    const findLastItems = async () => {
+        const items = await apiLastItems()
+        setLastItems(items)
+    }
 
-	const lastGames = lastItems.filter(item => item.type === 'GAME')
+    const lastGames = lastItems.filter((item) => item.type === 'GAME')
 
-	return (
-		<div>
-			<div className='grid gap-10'>
-				<HomeHeader />
+    return (
+        <div>
+            <div className="grid gap-10">
+                <HomeHeader />
 
-				<HomeSocials />
+                <HomeSocials />
 
-				{
-					lastGames.length > 0 && (
-						<HomeGames lastGames={lastGames} />
-					)
-				}
-			</div>
-		</div>
-	)
+                {lastGames.length > 0 && <HomeGames lastGames={lastGames} />}
+            </div>
+        </div>
+    )
 }
