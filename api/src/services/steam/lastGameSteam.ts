@@ -74,7 +74,7 @@ export async function lastGamePlayedSteam() {
 
         const name = game.textContent || ''
         const imageUrl = `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${appId}/header.jpg`
-        const backgroundUrl = `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${appId}/page_bg_raw.jpg`
+        const backgroundUrl = `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${appId}/library_hero.jpg`
 
         return {
             imageUrl,
